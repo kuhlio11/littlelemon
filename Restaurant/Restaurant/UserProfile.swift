@@ -18,12 +18,16 @@ struct UserProfile: View {
     var body: some View {
         VStack {
             Text("Personal Information")
+                .font(.title)
             Image("profile-image-placeholder")
             HStack {
                 Text(firstName ?? "")
                 Text(lastName ?? "")
             }
+            .padding()
+            .font(.title2)
             Text(email ?? "")
+                .font(.title2)
             
             Spacer()
             
@@ -31,7 +35,13 @@ struct UserProfile: View {
                 UserDefaults.standard.set(false, forKey: kIsLoggedIn)
                 self.presentation.wrappedValue.dismiss()
             }
+            .font(.title)
+            .foregroundColor(.black)
+            .frame(width: 250, height: 50)
+            .background(Color.yellow)
+            .cornerRadius(10)
         }
+        .padding()
     }
 }
 

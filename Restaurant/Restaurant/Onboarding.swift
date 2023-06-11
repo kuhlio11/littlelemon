@@ -65,6 +65,8 @@ struct Onboarding: View {
                 
                 Spacer()
                 
+                NavigationLink("", destination: Home(), isActive: $isLoggedIn)
+                
                 Button("Login") {
                     // OPTIONAL: FOr additional security, add a check to verify the email is valid.
                     if !firstName.isEmpty && !lastName.isEmpty && !email.isEmpty {
@@ -82,7 +84,6 @@ struct Onboarding: View {
                 .background(Color.yellow)
                 .cornerRadius(10)
                 
-                NavigationLink("", destination: Home(), isActive: $isLoggedIn)
             }
             .padding()
             .onAppear {
