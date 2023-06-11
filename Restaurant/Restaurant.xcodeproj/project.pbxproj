@@ -11,6 +11,8 @@
 		85E9881B2A365AFC00595FCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85E9881A2A365AFC00595FCA /* Assets.xcassets */; };
 		85E9881E2A365AFC00595FCA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85E9881D2A365AFC00595FCA /* Preview Assets.xcassets */; };
 		85E988252A3661DD00595FCA /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E988242A3661DD00595FCA /* Onboarding.swift */; };
+		85E988272A3671A500595FCA /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E988262A3671A500595FCA /* Home.swift */; };
+		85E988292A3671C800595FCA /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E988282A3671C800595FCA /* Menu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		85E9881A2A365AFC00595FCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85E9881D2A365AFC00595FCA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		85E988242A3661DD00595FCA /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		85E988262A3671A500595FCA /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		85E988282A3671C800595FCA /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				85E988162A365AFC00595FCA /* RestaurantApp.swift */,
 				85E988242A3661DD00595FCA /* Onboarding.swift */,
+				85E988262A3671A500595FCA /* Home.swift */,
+				85E988282A3671C800595FCA /* Menu.swift */,
 				85E9881A2A365AFC00595FCA /* Assets.xcassets */,
 				85E9881C2A365AFC00595FCA /* Preview Content */,
 			);
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				85E988252A3661DD00595FCA /* Onboarding.swift in Sources */,
+				85E988272A3671A500595FCA /* Home.swift in Sources */,
+				85E988292A3671C800595FCA /* Menu.swift in Sources */,
 				85E988172A365AFC00595FCA /* RestaurantApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
