@@ -13,6 +13,7 @@
 		85E988252A3661DD00595FCA /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E988242A3661DD00595FCA /* Onboarding.swift */; };
 		85E988272A3671A500595FCA /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E988262A3671A500595FCA /* Home.swift */; };
 		85E988292A3671C800595FCA /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E988282A3671C800595FCA /* Menu.swift */; };
+		85E9882B2A3676A200595FCA /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E9882A2A3676A200595FCA /* UserProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		85E988242A3661DD00595FCA /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		85E988262A3671A500595FCA /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		85E988282A3671C800595FCA /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		85E9882A2A3676A200595FCA /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				85E988162A365AFC00595FCA /* RestaurantApp.swift */,
 				85E988242A3661DD00595FCA /* Onboarding.swift */,
+				85E9882A2A3676A200595FCA /* UserProfile.swift */,
 				85E988262A3671A500595FCA /* Home.swift */,
 				85E988282A3671C800595FCA /* Menu.swift */,
 				85E9881A2A365AFC00595FCA /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 			files = (
 				85E988252A3661DD00595FCA /* Onboarding.swift in Sources */,
 				85E988272A3671A500595FCA /* Home.swift in Sources */,
+				85E9882B2A3676A200595FCA /* UserProfile.swift in Sources */,
 				85E988292A3671C800595FCA /* Menu.swift in Sources */,
 				85E988172A365AFC00595FCA /* RestaurantApp.swift in Sources */,
 			);
