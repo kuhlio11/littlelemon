@@ -10,6 +10,7 @@ import SwiftUI
 let kFirstName = "first name key"
 let kLastName = "last name key"
 let kEmail = "email key"
+let kIsLoggedIn = "logged in key"
 
 struct Onboarding: View {
     
@@ -20,23 +21,32 @@ struct Onboarding: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                NavigationLink("", destination: Home(), isActive: $isLoggedIn)
-                HStack {
-                    Text("First Name: ")
-                    TextField("required", text: $firstName)
+            VStack {                
+                Section {
+                    HStack {
+                        Text("First Name: ")
+                        TextField("required", text: $firstName)
+                    }
+                    HStack {
+                        Text("Last Name: ")
+                        TextField("required", text: $lastName)
+                    }
+                    HStack {
+                        Text("Email: ")
+                        TextField("required", text: $email)
+                            .textInputAutocapitalization(.never)
+                    }
                 }
-                HStack {
-                    Text("Last Name: ")
-                    TextField("required", text: $lastName)
-                }
-                HStack {
-                    Text("Email: ")
-                    TextField("required", text: $email)
-                }
+                .padding()
+                .background(Color.gray.opacity(0.2))
+                .cornerRadius(10)
+                .autocorrectionDisabled()
+                .listStyle(.plain)
+                
+                Spacer()
                 
                 Button("Login") {
-                    // OPTIONAL: FOr additional security, add a check to verify the email is valid.
+                    // For extra security - modify the third check to verify that the email is valid before storing the details and navigating to the Home screen
                     if !firstName.isEmpty && !lastName.isEmpty && !email.isEmpty {
                         UserDefaults.standard.set(firstName, forKey: kFirstName)
                         UserDefaults.standard.set(lastName, forKey: kLastName)
@@ -44,6 +54,15 @@ struct Onboarding: View {
                         isLoggedIn = true
                     }
                 }
+                .padding()
+                .foregroundColor(.black)
+                .frame(width: 200)
+                .background(Color.yellow)
+                .cornerRadius(10)
+                .padding(.horizontal)
+            }
+            .navigationDestination(isPresented: $isLoggedIn) {
+                Home()
             }
         }
     }
