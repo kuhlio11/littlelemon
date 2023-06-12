@@ -21,7 +21,14 @@ struct Onboarding: View {
     
     var body: some View {
         NavigationStack {
-            VStack {                
+            VStack {
+                Text("Welcome to Little Lemon, your favorite Mediterranean Bistro!")
+                    .multilineTextAlignment(.center)
+                    .font(.title2)
+                
+                Image("logo")
+                    .padding(.vertical)
+                
                 Section {
                     HStack {
                         Text("First Name: ")
@@ -42,9 +49,7 @@ struct Onboarding: View {
                 .cornerRadius(10)
                 .autocorrectionDisabled()
                 .listStyle(.plain)
-                
-                Spacer()
-                
+                                
                 Button("Login") {
                     // For extra security - modify the third check to verify that the email is valid before storing the details and navigating to the Home screen
                     if !firstName.isEmpty && !lastName.isEmpty && !email.isEmpty {
@@ -60,8 +65,9 @@ struct Onboarding: View {
                 .frame(width: 200)
                 .background(Color.yellow)
                 .cornerRadius(10)
-                .padding(.horizontal)
+                .padding(.top)
             }
+            .padding()
             .onAppear {
                 if UserDefaults.standard.bool(forKey: kIsLoggedIn) {
                     isLoggedIn = true

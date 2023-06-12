@@ -17,20 +17,32 @@ struct UserProfile: View {
     
     var body: some View {
         VStack {
-            Text("Pesonal Information")
+            Text("Personal Information")
+                .font(.title)
+                .padding()
+            
             Image("profile-image-placeholder")
             
-            // OPTIONAL: Add textfields and an update button to modify profile information by modifying UserDefaults
-            HStack {
-                Text(firstName ?? "")
-                Text(lastName ?? "")
+            Section {
+                // OPTIONAL: Add textfields and an update button to modify profile information by modifying UserDefaults
+                HStack {
+                    Text(firstName ?? "")
+                    Text(lastName ?? "")
+                }
+                Text(email ?? "")
             }
-            Text(email ?? "")
+            .padding()
             
             Button("Logout") {
                 UserDefaults.standard.set(false, forKey: kIsLoggedIn)
                 self.presentation.wrappedValue.dismiss()
             }
+            .padding()
+            .foregroundColor(.black)
+            .frame(width: 200)
+            .background(Color.yellow)
+            .cornerRadius(10)
+            .padding(.top)
         }
     }
 }
