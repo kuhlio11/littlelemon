@@ -51,6 +51,7 @@ struct Onboarding: View {
                         UserDefaults.standard.set(firstName, forKey: kFirstName)
                         UserDefaults.standard.set(lastName, forKey: kLastName)
                         UserDefaults.standard.set(email, forKey: kEmail)
+                        UserDefaults.standard.set(true, forKey: kIsLoggedIn)
                         isLoggedIn = true
                     }
                 }
@@ -60,6 +61,11 @@ struct Onboarding: View {
                 .background(Color.yellow)
                 .cornerRadius(10)
                 .padding(.horizontal)
+            }
+            .onAppear {
+                if UserDefaults.standard.bool(forKey: kIsLoggedIn) {
+                    isLoggedIn = true
+                }
             }
             .navigationDestination(isPresented: $isLoggedIn) {
                 Home()
