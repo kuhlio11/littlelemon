@@ -13,7 +13,7 @@ let kEmail = "email key"
 let kIsLoggedIn = "logged in key"
 
 struct Onboarding: View {
-    
+        
     @State var firstName: String = ""
     @State var lastName: String = ""
     @State var email: String = ""
