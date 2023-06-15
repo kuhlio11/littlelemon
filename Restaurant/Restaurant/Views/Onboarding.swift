@@ -7,17 +7,11 @@
 
 import SwiftUI
 
-let kFirstName = "first name key"
-let kLastName = "last name key"
-let kEmail = "email key"
-let kIsLoggedIn = "logged in key"
-
 struct Onboarding: View {
-        
-    @State var firstName: String = ""
-    @State var lastName: String = ""
-    @State var email: String = ""
-    @State var isLoggedIn: Bool = false
+    
+    @ObservedObject var userSettings = UserSettings()
+    
+    @Environment(\.managedObjectContext) private var viewContext
     
     var body: some View {
         NavigationStack {
@@ -32,15 +26,15 @@ struct Onboarding: View {
                 Section {
                     HStack {
                         Text("First Name: ")
-                        TextField("required", text: $firstName)
+                        TextField("required", text: $userSettings.firstName)
                     }
                     HStack {
                         Text("Last Name: ")
-                        TextField("required", text: $lastName)
+                        TextField("required", text: $userSettings.lastName)
                     }
                     HStack {
                         Text("Email: ")
-                        TextField("required", text: $email)
+                        TextField("required", text: $userSettings.email)
                             .textInputAutocapitalization(.never)
                     }
                 }
@@ -52,12 +46,12 @@ struct Onboarding: View {
                                 
                 Button("Login") {
                     // For extra security - modify the third check to verify that the email is valid before storing the details and navigating to the Home screen
-                    if !firstName.isEmpty && !lastName.isEmpty && !email.isEmpty {
-                        UserDefaults.standard.set(firstName, forKey: kFirstName)
-                        UserDefaults.standard.set(lastName, forKey: kLastName)
-                        UserDefaults.standard.set(email, forKey: kEmail)
-                        UserDefaults.standard.set(true, forKey: kIsLoggedIn)
-                        isLoggedIn = true
+                    if !userSettings.firstName.isEmpty && !userSettings.lastName.isEmpty && !userSettings.email.isEmpty {
+                        UserDefaults.standard.set(userSettings.firstName, forKey: "kFirstName")
+                        UserDefaults.standard.set(userSettings.lastName, forKey: "kLastName")
+                        UserDefaults.standard.set(userSettings.email, forKey: "kEmail")
+                        UserDefaults.standard.set(true, forKey: "kIsLoggedIn")
+                        userSettings.isLoggedIn = true
                     }
                 }
                 .padding()
@@ -67,13 +61,12 @@ struct Onboarding: View {
                 .cornerRadius(10)
                 .padding(.top)
             }
-            .padding()
             .onAppear {
-                if UserDefaults.standard.bool(forKey: kIsLoggedIn) {
-                    isLoggedIn = true
+                if UserDefaults.standard.bool(forKey: "kIsLoggedIn") {
+                    userSettings.isLoggedIn = true
                 }
             }
-            .navigationDestination(isPresented: $isLoggedIn) {
+            .navigationDestination(isPresented: $userSettings.isLoggedIn) {
                 Home()
             }
         }
