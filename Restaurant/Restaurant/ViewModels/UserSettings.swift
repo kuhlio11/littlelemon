@@ -20,8 +20,15 @@ class UserSettings: ObservableObject {
     @Published var passwordChanges: Bool {didSet {UserDefaults.standard.set(passwordChanges, forKey: "kPasswordChanges")}}
     @Published var specialOffers: Bool {didSet {UserDefaults.standard.set(specialOffers, forKey: "kSpecialOffers")}}
     @Published var newsletter: Bool {didSet {UserDefaults.standard.set(newsletter, forKey: "kNewsletter")}}
-
     
+    @Published var searchText: String = ""
+    
+    @Published var filteringStarters: Bool = false
+    @Published var filteringMains: Bool = false
+    @Published var filteringDesserts: Bool = false
+    @Published var filteringDrinks: Bool = false
+    
+
     init() {
         self.firstName = UserDefaults.standard.object(forKey: "kFirstName") as? String ?? ""
         self.lastName = UserDefaults.standard.object(forKey: "kLastName") as? String ?? ""

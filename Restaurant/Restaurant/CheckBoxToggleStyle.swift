@@ -13,11 +13,14 @@ struct CheckboxToggleStyle: ToggleStyle {
         HStack {
  
             RoundedRectangle(cornerRadius: 5.0)
-                .stroke(lineWidth: 2)
+                .stroke(lineWidth: 1)
                 .frame(width: 25, height: 25)
                 .cornerRadius(5.0)
                 .overlay {
-                    Image(systemName: configuration.isOn ? "checkmark" : "")
+                    Image(systemName: configuration.isOn ? "checkmark.square.fill" : "")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(Color("primary1"))
                 }
                 .onTapGesture {
                     withAnimation(.spring()) {

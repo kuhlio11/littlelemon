@@ -18,75 +18,131 @@ struct UserProfile: View {
     @Environment(\.presentationMode) var presentation
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Personal Information")
-            Text("Avatar")
-            HStack(spacing: 40) {
-                Image("profile-image-placeholder")
-                    .resizable()
-                    .scaledToFit()
-                Button("Change") {
+        ScrollView {
+            VStack(alignment: .leading) {
+                Text("Personal Information")
+                    .font(.sectionTitle())
+                    .padding(.bottom, 10)
+                    .padding(.top, 20)
+                
+                Text("Avatar")
+                    .onboardingTextStyle()
+                HStack(spacing: -10) {
+                    Image("profile-image-placeholder")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 90)
+                        .padding(.trailing)
+                    
+                    Button("Change") {}
+                    .buttonStyle(ButtonStylePrimaryColor1())
+                    
+                    Button("Remove") {}
+                    .buttonStyle(ButtonStylePrimaryColorReverse())
+                    
+                    Spacer()
                     
                 }
-                Button("Remove") {
+                
+                Section {
+                    // OPTIONAL: Add textfields and an update button to modify profile information by modifying UserDefaults
+                    VStack {
+                        Text("First name")
+                            .onboardingTextStyle()
+                            .padding(.bottom, 10)
+                        TextField("", text: $userSettings.firstName)
+                            .textFieldStyle(.plain)
+                            .padding(.leading)
+                            .overlay(
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(lineWidth: 1)
+                                .padding(.vertical, -12)
+                                .foregroundColor(.black.opacity(0.1)))
+                    }
                     
+                    VStack {
+                        Text("Last name")
+                            .onboardingTextStyle()
+                            .padding(.bottom, 10)
+
+                        TextField("", text: $userSettings.lastName)
+                            .textFieldStyle(.plain)
+                            .padding(.leading)
+                            .overlay(
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(lineWidth: 1)
+                                .padding(.vertical, -12)
+                                .foregroundColor(.black.opacity(0.1)))
+                    }
+                    
+                    VStack {
+                        Text("Email")
+                            .onboardingTextStyle()
+                            .padding(.bottom, 10)
+
+                        TextField("", text: $userSettings.email)
+                            .textFieldStyle(.plain)
+                            .padding(.leading)
+                            .overlay(
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(lineWidth: 1)
+                                .padding(.vertical, -12)
+                                .foregroundColor(.black.opacity(0.1)))
+                    }
+                    
+                    VStack {
+                        Text("Phone number")
+                            .onboardingTextStyle()
+                            .padding(.bottom, 10)
+
+                        TextField("", text: $userSettings.phoneNumber)
+                            .textFieldStyle(.plain)
+                            .padding(.leading)
+                            .overlay(
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(lineWidth: 1)
+                                .padding(.vertical, -12)
+                                .foregroundColor(.black.opacity(0.1)))
+                    }
                 }
-            }
-            .frame(height: 90)
-            
-            Section {
-                // OPTIONAL: Add textfields and an update button to modify profile information by modifying UserDefaults
-                Text("First name")
-                TextField("", text: $userSettings.firstName)
-                    .padding(.bottom)
-                Text("Last name")
-                TextField("", text: $userSettings.lastName)
-                    .padding(.bottom)
-                Text("Email")
-                TextField("", text: $userSettings.email)
-                    .padding(.bottom)
-                Text("Phone number")
-                TextField("", text: $userSettings.phoneNumber)
-                    .padding(.bottom)
-            }
-            
-            Section {
+                .padding(.bottom, 35)
+                .textFieldStyle(.roundedBorder)
+                .autocorrectionDisabled()
+                
                 Text("Email notifications")
-                Toggle("Order statuses", isOn: $userSettings.orderStatuses)
-                    .toggleStyle(CheckboxToggleStyle())
-                Toggle("Password changes", isOn: $userSettings.passwordChanges)
-                    .toggleStyle(CheckboxToggleStyle())
-                Toggle("Special offers", isOn: $userSettings.specialOffers)
-                    .toggleStyle(CheckboxToggleStyle())
-                Toggle("Newsletter", isOn: $userSettings.newsletter)
-                    .toggleStyle(CheckboxToggleStyle())
-            }
-            
-            Button("Log out") {
-                UserDefaults.standard.set(false, forKey: "kIsLoggedIn")
-                self.presentation.wrappedValue.dismiss()
-            }
-            .padding()
-            .foregroundColor(.black)
-            .fontWeight(.bold)
-            .frame(maxWidth: .infinity)
-            .background(Color.yellow)
-            .cornerRadius(10)
-            .padding(.top)
-            
-            HStack {
-                Spacer()
-                Button("Discard changes") {
-                    
+                    .font(.sectionTitle())
+                    .padding(.bottom, 10)
+                
+                Section {
+                    Toggle("Order statuses", isOn: $userSettings.orderStatuses)
+                        .toggleStyle(CheckboxToggleStyle())
+                    Toggle("Password changes", isOn: $userSettings.passwordChanges)
+                        .toggleStyle(CheckboxToggleStyle())
+                    Toggle("Special offers", isOn: $userSettings.specialOffers)
+                        .toggleStyle(CheckboxToggleStyle())
+                    Toggle("Newsletter", isOn: $userSettings.newsletter)
+                        .toggleStyle(CheckboxToggleStyle())
+                        .padding(.bottom, 30)
                 }
-                Spacer()
-                Button("Save changes") {
-                    
+                .font(Font.leadText())
+                .foregroundColor(Color("primary1"))
+                
+                Button("Log out") {
+                    UserDefaults.standard.set(false, forKey: "kIsLoggedIn")
+                    self.presentation.wrappedValue.dismiss()
                 }
-                Spacer()
+                .buttonStyle(ButtonStyleYellowColorWide())
+                .padding(.bottom, 30)
+                
+                HStack(spacing: 0) {
+                    Button("Discard changes") {}
+                        .buttonStyle(ButtonStylePrimaryColorReverse())
+                    Button("Save changes") {}
+                        .buttonStyle(ButtonStylePrimaryColor1())
+                }
             }
+            .padding(.horizontal)
         }
-        .padding(.horizontal)
     }
 }
 

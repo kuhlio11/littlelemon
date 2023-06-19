@@ -9,19 +9,22 @@ import SwiftUI
 
 struct NavigationBar: View {
     var body: some View {
-        HStack {
-            Spacer()
-            Spacer()
-            Image("headerLogo")
-                .resizable()
-                .scaledToFit()
-            Spacer()
-            Image("profile-image-placeholder")
-                .resizable()
-                .scaledToFit()
-        }
-        .frame(height: 50)
+        ZStack {
+            Color.white.padding(.top, -50)
+            HStack {
+                Spacer()
+                Spacer()
+                Image("headerLogo")
+                    .resizable()
+                    .scaledToFit()
+                Spacer()
+                Image("profile-image-placeholder")
+                    .resizable()
+                    .scaledToFit()
+            }
+            .frame(height: 50)
         .frame(maxWidth: .infinity)
+        }
     }
 }
 
