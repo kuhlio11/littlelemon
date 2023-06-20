@@ -23,9 +23,17 @@ struct Home: View {
             }
             .navigationBarBackButtonHidden(true)
             .toolbar {
-                ToolbarItem(placement: .principal) {
-                    NavigationBar()
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Image("headerLogo")
+                        .resizable()
+                        .scaledToFill()
                 }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Image("profile-image-placeholder")
+                        .resizable()
+                        .scaledToFit()
+                }
+                
             }
         }
     }

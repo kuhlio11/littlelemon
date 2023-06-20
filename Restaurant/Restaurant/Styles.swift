@@ -67,4 +67,6 @@ extension Font {
     static func sectionCategories() -> Font {return Font.custom("Karla", size: 16).weight(.heavy)}
     static func paragraphText() -> Font {return Font.custom("Karla", size: 16)}
     static func highlightText() -> Font {return Font.custom("Karla", size: 16).weight(.medium)}
+    
+    static func onboardingText() -> Font {return Font.custom("Karla-Bold", size: 13)}
 }

@@ -15,12 +15,11 @@ struct Menu: View {
     @State var searchText: String = ""
     
     var body: some View {
-        VStack {
-            Text("Title of Application")
-            Text("Chicago")
-            Text("Short description of whole application.")
-            
-            TextField("Search menu", text: $searchText)
+        ScrollView {
+            HeroSection()
+                .padding(.vertical)
+            MenuFilters()
+                .padding()
             
             FetchedObjects(predicate: buildPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
                 List {

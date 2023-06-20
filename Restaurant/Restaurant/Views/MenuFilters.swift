@@ -15,6 +15,7 @@ struct MenuFilters: View {
         VStack {
             Text("ORDER FOR DELIVERY!")
                 .font(.sectionTitle())
+                .frame(maxWidth: .infinity, alignment: .leading)
             HStack {
                 Button(action: { userSettings.filteringStarters.toggle()}, label: {
                     Text("Starters")
@@ -49,6 +50,8 @@ struct MenuFilters: View {
                         .cornerRadius(20)
                 })
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
+
         }
     }
 }

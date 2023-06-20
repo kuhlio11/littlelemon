@@ -26,7 +26,7 @@ struct UserProfile: View {
                     .padding(.top, 20)
                 
                 Text("Avatar")
-                    .onboardingTextStyle()
+                    
                 HStack(spacing: -10) {
                     Image("profile-image-placeholder")
                         .resizable()
@@ -48,8 +48,11 @@ struct UserProfile: View {
                     // OPTIONAL: Add textfields and an update button to modify profile information by modifying UserDefaults
                     VStack {
                         Text("First name")
-                            .onboardingTextStyle()
+                            .font(.onboardingText())
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .foregroundColor(Color("primary1"))
                             .padding(.bottom, 10)
+                        
                         TextField("", text: $userSettings.firstName)
                             .textFieldStyle(.plain)
                             .padding(.leading)
@@ -62,7 +65,9 @@ struct UserProfile: View {
                     
                     VStack {
                         Text("Last name")
-                            .onboardingTextStyle()
+                            .font(.onboardingText())
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .foregroundColor(Color("primary1"))
                             .padding(.bottom, 10)
 
                         TextField("", text: $userSettings.lastName)
@@ -77,7 +82,9 @@ struct UserProfile: View {
                     
                     VStack {
                         Text("Email")
-                            .onboardingTextStyle()
+                            .font(.onboardingText())
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .foregroundColor(Color("primary1"))
                             .padding(.bottom, 10)
 
                         TextField("", text: $userSettings.email)
@@ -92,7 +99,9 @@ struct UserProfile: View {
                     
                     VStack {
                         Text("Phone number")
-                            .onboardingTextStyle()
+                            .font(.onboardingText())
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .foregroundColor(Color("primary1"))
                             .padding(.bottom, 10)
 
                         TextField("", text: $userSettings.phoneNumber)
@@ -124,8 +133,7 @@ struct UserProfile: View {
                         .toggleStyle(CheckboxToggleStyle())
                         .padding(.bottom, 30)
                 }
-                .font(Font.leadText())
-                .foregroundColor(Color("primary1"))
+                .font(Font.highlightText())
                 
                 Button("Log out") {
                     UserDefaults.standard.set(false, forKey: "kIsLoggedIn")
@@ -140,6 +148,7 @@ struct UserProfile: View {
                     Button("Save changes") {}
                         .buttonStyle(ButtonStylePrimaryColor1())
                 }
+                .padding(.bottom, 50)
             }
             .padding(.horizontal)
         }
