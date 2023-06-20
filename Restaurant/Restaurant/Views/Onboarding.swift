@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct Onboarding: View {
     
@@ -20,7 +21,7 @@ struct Onboarding: View {
                     .multilineTextAlignment(.center)
                     .font(.title2)
                 
-                Image("logo")
+                Image("onboardingLogo")
                     .padding(.vertical)
                 
                 Section {
@@ -40,7 +41,7 @@ struct Onboarding: View {
                 }
                 .padding()
                 .background(Color.gray.opacity(0.2))
-                .cornerRadius(10)
+                .cornerRadius(8)
                 .autocorrectionDisabled()
                 .listStyle(.plain)
                                 
@@ -54,13 +55,10 @@ struct Onboarding: View {
                         userSettings.isLoggedIn = true
                     }
                 }
-                .padding()
-                .foregroundColor(.black)
-                .frame(width: 200)
-                .background(Color.yellow)
-                .cornerRadius(10)
+                .buttonStyle(ButtonStyleYellowColorWide())
                 .padding(.top)
             }
+            .padding(.horizontal)
             .onAppear {
                 if UserDefaults.standard.bool(forKey: "kIsLoggedIn") {
                     userSettings.isLoggedIn = true

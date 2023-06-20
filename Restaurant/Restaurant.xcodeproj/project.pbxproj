@@ -14,7 +14,6 @@
 		8565854D2A3774B100C23747 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8565854C2A3774B100C23747 /* MenuItem.swift */; };
 		856585522A37DEAF00C23747 /* ExampleDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 856585502A37DEAF00C23747 /* ExampleDatabase.xcdatamodeld */; };
 		856585572A3B4FA500C23747 /* MenuFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856585562A3B4FA500C23747 /* MenuFilters.swift */; };
-		856585592A3B4FB400C23747 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856585582A3B4FB400C23747 /* NavigationBar.swift */; };
 		8565855B2A3B4FC500C23747 /* HeroSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8565855A2A3B4FC500C23747 /* HeroSection.swift */; };
 		856585602A3BA85400C23747 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8565855F2A3BA85400C23747 /* UserSettings.swift */; };
 		856585652A3BB2DB00C23747 /* CheckBoxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856585642A3BB2DB00C23747 /* CheckBoxToggleStyle.swift */; };
@@ -35,7 +34,6 @@
 		8565854C2A3774B100C23747 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		856585512A37DEAF00C23747 /* ExampleDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExampleDatabase.xcdatamodel; sourceTree = "<group>"; };
 		856585562A3B4FA500C23747 /* MenuFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFilters.swift; sourceTree = "<group>"; };
-		856585582A3B4FB400C23747 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		8565855A2A3B4FC500C23747 /* HeroSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroSection.swift; sourceTree = "<group>"; };
 		8565855F2A3BA85400C23747 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		856585642A3BB2DB00C23747 /* CheckBoxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxToggleStyle.swift; sourceTree = "<group>"; };
@@ -66,7 +64,6 @@
 				85E988262A3671A500595FCA /* Home.swift */,
 				85E988242A3661DD00595FCA /* Onboarding.swift */,
 				856585442A3755CA00C23747 /* UserProfile.swift */,
-				856585582A3B4FB400C23747 /* NavigationBar.swift */,
 				856585562A3B4FA500C23747 /* MenuFilters.swift */,
 				8565855A2A3B4FC500C23747 /* HeroSection.swift */,
 				85E988282A3671C800595FCA /* Menu.swift */,
@@ -110,10 +107,10 @@
 		85E988152A365AFC00595FCA /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
+				85E988162A365AFC00595FCA /* RestaurantApp.swift */,
 				856585632A3BB2CE00C23747 /* Models */,
 				8565855C2A3BA3FA00C23747 /* ViewModels */,
 				856585532A3B4E5200C23747 /* Views */,
-				85E988162A365AFC00595FCA /* RestaurantApp.swift */,
 				856585642A3BB2DB00C23747 /* CheckBoxToggleStyle.swift */,
 				856585662A3C04D200C23747 /* Styles.swift */,
 				856585502A37DEAF00C23747 /* ExampleDatabase.xcdatamodeld */,
@@ -207,7 +204,6 @@
 				85E988272A3671A500595FCA /* Home.swift in Sources */,
 				8565854B2A37749C00C23747 /* MenuList.swift in Sources */,
 				856585452A3755CA00C23747 /* UserProfile.swift in Sources */,
-				856585592A3B4FB400C23747 /* NavigationBar.swift in Sources */,
 				856585482A37740900C23747 /* Persistence.swift in Sources */,
 				856585572A3B4FA500C23747 /* MenuFilters.swift in Sources */,
 				856585522A37DEAF00C23747 /* ExampleDatabase.xcdatamodeld in Sources */,

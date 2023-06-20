@@ -36,9 +36,11 @@ struct UserProfile: View {
                     
                     Button("Change") {}
                     .buttonStyle(ButtonStylePrimaryColor1())
+                    .padding()
                     
                     Button("Remove") {}
                     .buttonStyle(ButtonStylePrimaryColorReverse())
+                    .padding()
                     
                     Spacer()
                     
@@ -142,11 +144,14 @@ struct UserProfile: View {
                 .buttonStyle(ButtonStyleYellowColorWide())
                 .padding(.bottom, 30)
                 
-                HStack(spacing: 0) {
+                HStack {
+                    Spacer()
                     Button("Discard changes") {}
                         .buttonStyle(ButtonStylePrimaryColorReverse())
+                    Spacer()
                     Button("Save changes") {}
                         .buttonStyle(ButtonStylePrimaryColor1())
+                    Spacer()
                 }
                 .padding(.bottom, 50)
             }

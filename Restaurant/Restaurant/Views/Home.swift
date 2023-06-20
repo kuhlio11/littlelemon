@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct Home: View {
 
@@ -23,17 +24,16 @@ struct Home: View {
             }
             .navigationBarBackButtonHidden(true)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                HStack {
+                    Spacer()
                     Image("headerLogo")
-                        .resizable()
-                        .scaledToFill()
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
+                        .resizable().scaledToFit()
+                        .padding(.leading, 35)
+                    Spacer()
                     Image("profile-image-placeholder")
-                        .resizable()
-                        .scaledToFit()
+                        .resizable().scaledToFit()
                 }
-                
+                .padding(.bottom, 5)
             }
         }
     }

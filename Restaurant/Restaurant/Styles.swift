@@ -13,7 +13,7 @@ struct ButtonStyleYellowColorWide: ButtonStyle {
         configuration.label
             .frame(maxWidth: .infinity)
             .foregroundColor(configuration.isPressed ? .white : .black)
-            .padding(10)
+            .padding()
             .background(configuration.isPressed ? Color("primary1") : Color("primary2"))
             .cornerRadius(8)
     }
@@ -23,14 +23,13 @@ struct ButtonStylePrimaryColor1: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .foregroundColor(configuration.isPressed ? Color("primary1") : .white)
-            .padding(10)
+            .padding()
             .background(configuration.isPressed ? .white : Color("primary1"))
             .cornerRadius(8)
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
                     .stroke(Color("primary1"), lineWidth: 1)
             )
-            .padding(.horizontal)
     }
 }
 
@@ -38,14 +37,13 @@ struct ButtonStylePrimaryColorReverse: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .foregroundColor(configuration.isPressed ? .white : Color("primary1"))
-            .padding(10)
+            .padding()
             .background(configuration.isPressed ? Color("primary1") : .white)
             .cornerRadius(8)
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
                     .stroke(Color("primary1"), lineWidth: 1)
             )
-            .padding(.horizontal)
     }
 }
 
